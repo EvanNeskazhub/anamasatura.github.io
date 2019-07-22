@@ -1,0 +1,74 @@
+// [styles
+section
+  position: relative
+  background-color: #efefef
+  margin: 0 auto
+  margin: 5vh
+  height: 89vh
+  .text
+    z-index: 10
+    color: #000000
+    font-family: "Raleway"
+    font-size: 5vh
+    line-height: 8vh
+    padding: 10vh
+    .title
+      font-weight: 800
+      // margin-bottom: 2vh
+      span
+        opacity: .8
+        font-weight: 200
+    .subtitle
+      margin: 0
+      padding: 0
+      width: 65vh
+      font-family: "LM Roman Slant 10"
+      font-size: 18px
+      font-weight: 500
+      line-height: 25px
+      font-style: italic
+      margin-bottom: 2vh
+    .line-vertical
+      z-index: 3
+      margin-top: 1vh
+      width: 2px
+      height: 80px
+      border: 1px solid #000000
+      opacity: .7
+    .line-horizontal
+      z-index: 3
+      display: inline-block
+      margin-bottom: 2vh
+      margin-right: 1vh
+      height: 2px
+      width: 80px
+      border: 1px solid #000000
+      opacity: .7
+  .bg-letter
+    z-index: 1
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+  .bg-front
+    right: 0
+    z-index: 1
+    position: absolute
+    top: 0
+    height: 100%
+// styles]
+
+// [sections
+@import _header.sass
+@import _main.sass
+@import _footer.sass
+
+@import "sections/_s1.sass"
+@import "sections/_s2.sass"
+@import "sections/_s3.sass"
+@import "sections/_s4.sass"
+@import "sections/_s5.sass"
+// sections]
+
+@import _default.sass
+@import _media.sass

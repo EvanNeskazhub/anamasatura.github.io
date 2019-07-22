@@ -1,0 +1,108 @@
+#sidebar
+  z-index: 999
+  position: fixed
+  right: 0
+  top: 0
+  bottom: 0
+  width: 19vh
+  transform: translate(100%)
+  transition: 0.2s all ease-in-out
+
+  background-color: #fff
+  color: #666
+  box-shadow: 1vh 0 2vh rgba(0,0,0,0.0)
+
+
+#sidebar.show
+  transform: translate(0%)
+  box-shadow: 1vh 0 3vh rgba(0,0,0,0.0)
+  border-right: 1px solid #eee
+
+
+#sidebar .sidebar-inner
+  padding: 2vh 4vh
+  padding-top: 15vh
+
+
+#sidebar .menu
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+
+#sidebar .menu li
+  display: block
+
+
+#sidebar .menu li a
+  display: block
+  padding: 1.5vh 0
+  color: #333
+  font-size: 3vh
+
+
+#sidebar .menu li:last-child a
+  border-bottom-color: transparent
+
+
+
+
+
+.menu-toggler
+  z-index: 999
+  position: fixed
+  right: 6.5vh
+  top: 2vh
+  width: 6vh
+  height: 6vh
+  transition: 0.25s all cubic-bezier(0.65,-0.15, 0.58, 0.87)
+.menu-toggler:hover
+  cursor: pointer
+
+.menu-toggler::after,
+.menu-toggler::before
+  position: absolute
+  content: ""
+
+  top: 50%
+  margin-top: -1px
+  height: 2px
+  width: 100%
+  background-color: #777
+  transition: 0.3s all ease-in-out
+
+
+.menu-toggler::before
+  transform: rotate(90deg)
+  transform-origin: center
+
+
+.menu-toggler::after
+  transform: rotate(0deg)
+  transform-origin: center
+
+
+
+.menu-toggler.active
+
+
+.menu-toggler.active::before
+  transform: rotate(-225deg)
+  transform-origin: center
+
+
+.menu-toggler.active::after
+  transform: rotate(-135deg)
+  transform-origin: center
+
+.social a
+  padding: 0
+  font-size: 5vh!important
+  text-align: center
+.social:hover
+  transition: .05s
+  margin: -0.4vh
+  border-radius: 150px
+  border: .4vh solid #77babc
+  a
+    color: #77babc!important
