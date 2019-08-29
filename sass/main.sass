@@ -1,57 +1,250 @@
-@import "fonts"
-@import "libs"
-@import "vars"
+@import vars
+@import fonts
+@import libs
 
-*
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
-
-*::-webkit-input-placeholder
+::placeholder
 	color: #666
-	opacity: 1
-
-*:-moz-placeholder
-	color: #666
-	opacity: 1
-
-*::-moz-placeholder
-	color: #666
-	opacity: 1
-
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
 
 ::selection
-	background-color: #000
+	background-color: $text
 	color: #fff
-
-.text-center
-	text-align: center
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
 
 body
-	background: url(https://i.pinimg.com/originals/d3/c4/05/d3c40593fa745755c523de424f56109b.gif)
-	background-color: #000
-	background-repeat: no-repeat
-	background-size: cover
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: Montserrat
+	overflow-x: hidden
+	color: $text
 
-	color: #fffccc
-.bg
+// RESET
+*
+	// обнуляет paddin & margin у всего
+	padding: 0
+	margin: 0
 
-h2
-	color: #fff
-	font-weight: 900
-	font-size: 6vh
-li
-	list-style: decimal
-a
-	font-size: 3vh
-	color: #fff
-	margin-bottom: 4vh
+button:focus,
+input:focus,
+textarea:focus,
+.btn-primary:focus,
+.btn:focus
+	// удаляет обводку от bootstrap при нажатии
+	box-shadow: none!important
+	outline: none!important
+.btn
+	border-radius: 100px
+	&:hover
+		box-shadow: none!important
 
-@import "media" // Всегда в конце
+// Header
+
+// // Navbar
+.bg-light
+	// удаляет фон у navbar от bootstrap
+	background: none!important
+.navbar
+	.nav-item.active
+		border-bottom: 3px solid $text
+	.nav-item
+		margin: 0 11px
+		.nav-link
+			padding-right: 0
+			padding-left: 0
+			padding-bottom: 0px
+
+			color: $text
+			
+			font-size: 14px
+			font-weight: 700
+			text-transform: uppercase
+		.butt
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			-webkit-display: flex
+			-moz-display: flex
+			-ms-display: flex
+			-o-display: flex
+			display: flex
+
+			align-items: center
+			margin-top: 3px
+			border-radius: 100px
+			border: 2px solid $text
+			height: 32px
+
+			padding: 7px 25px
+// // Hero-section
+.hero
+	height: 470px
+	.hello-title
+		margin-top: 28%
+		color: $text
+		
+		font-size: 45px
+		font-weight: 300
+		span
+			font-weight: 700
+			line-height: 48px
+		p
+			margin: 0
+			padding: 0
+	.status
+		color: $text-grey
+		opacity: 0.7
+		
+		font-size: 18px
+		font-weight: 600
+		line-height: 15px
+	.social
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		-webkit-display: flex
+		-moz-display: flex
+		-ms-display: flex
+		-o-display: flex
+		display: flex
+
+		align-items: space-around
+		&-item
+			margin: 0 3px
+			padding: 5px 9.5px
+
+			// default фон если не назначен свой
+			background-color: $text
+			color: #fff
+
+			transition: background .3s
+			&:hover
+				background-color: #fff
+				padding: 3px 7.5px
+				border: 2px solid $text
+				color: $text
+				box-shadow: 0 0 20px rgba(0,0,0, 0.3)
+.hero-img
+	margin-top: 105px
+	width: 450px
+
+// // Navbar brand
+.navbar-brand
+	position: relative
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	-webkit-display: flex
+	-moz-display: flex
+	-ms-display: flex
+	-o-display: flex
+	display: flex
+
+	justify-content: flex-start
+	align-items: center
+	img
+		width: 50px
+		height: 50px
+	.text
+
+		padding: 0
+		margin: 0
+
+		position: absolute
+		margin-top: 5.6px
+		margin-left: 53px
+		.name
+			
+			color: $text
+			
+			font-size: 16px
+			font-weight: 700
+		.status
+			margin-top: -19px
+
+			color: $text-grey
+			
+			font-size: 12px
+			font-weight: 600
+			line-height: 15px
+
+
+// Кнопки блока .hero
+.hero-buttons
+	margin-top: 15px
+	.button
+		border: 2px solid $text
+		border-radius: 150px
+		padding: 5px 15px
+		color: $text
+		font-weight: 600
+
+		transition: all .1s
+		&:hover, &:focus
+			text-decoration: none
+			background-color: $text
+			color: #fff
+			box-shadow: none!important
+
+
+
+
+
+
+// WORK.html
+.card
+	position: relative
+	padding: 0
+	box-shadow: 0 0 20px rgba(0,0,0, 0.3)
+	border-radius: 8px
+	opacity: 0.95
+	transition: all .2s
+	
+	margin-bottom: 24px
+	&:hover
+		opacity: 1
+		transform: scale(1.05)
+		z-index: 100
+	a 
+		color: $text
+		&:hover
+			text-decoration: none
+			
+	.card-body
+		padding: 8px
+		font-weight: 500
+
+	data
+		position: absolute
+		bottom: 0
+		right: 0
+
+		margin-right: 5px
+	p
+		padding: 0
+		margin: 0
+		
+.badge
+	font-weight: 500
+	background-color: $text
+
+.works
+	margin-top: 20px
+	margin-bottom: 10px
+
+
+.bg-test
+	&-1
+		background-color: orange
+	&-2
+		background-color: red
+	&-3
+		background-color: aqua
